@@ -131,7 +131,7 @@ const jobs = [
     let count = 0
   
     for (const job of jobs) {
-      if(job.title.toLowerCase().includes(titleQuery) && job.location.toLowerCase().includes(locationQuery)) {
+      if(job.title.toLowerCase().includes(titleInput) && job.location.toLowerCase().includes(locationInput)) {
         result.push(job);
         count ++
       }
@@ -142,17 +142,17 @@ const jobs = [
     }
   }
 
-  const titleElement = document.querySelector('#titleQuery')
+  const titleElement = document.querySelector('#titleInput')
 
   function search() {
-    const titleQuery = titleElement.value
-    const locationQuery = document.querySelector('#locationQuery').value
+    const titleInput = titleElement.value
+    const locationInput = document.querySelector('#locationInput').value
 
-    const elements = myJob (titleQuery, locationQuery)
+    const elements = myJob (titleInput, locationInput)
     console.log(elements)
     const results = document.querySelector('#result')
 
-    for (const elemnt of elements.result) {
+    for (const element of elements.result) {
       const li = document.createElement('li')
       li.innerHTML = '<div><p>' + elements.title + '</p> <p>' + elements.location + '</p></div>'
       results.appendChild(li)
