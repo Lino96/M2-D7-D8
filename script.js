@@ -126,7 +126,7 @@ const jobs = [
   ]
   
   
-  function myJob (titleQuery,locationQuery) {
+  function myJob (titleInput, locationInput) {
     let result = []
     let count = 0
   
@@ -141,20 +141,18 @@ const jobs = [
       result, count
     }
   }
-
+  myJob('dev', 'us')
   const titleElement = document.querySelector('#titleInput')
-
   function search() {
     const titleInput = titleElement.value
     const locationInput = document.querySelector('#locationInput').value
 
     const elements = myJob (titleInput, locationInput)
-    console.log(elements)
-    const results = document.querySelector('#result')
+    const results = document.querySelector('#results')
 
     for (const element of elements.result) {
       const li = document.createElement('li')
-      li.innerHTML = '<div><p>' + elements.title + '</p> <p>' + elements.location + '</p></div>'
+      li.innerHTML = '<div><p>' + element.title + '</p> <p>' + element.location + '</p></div>'
       results.appendChild(li)
     }
   }
