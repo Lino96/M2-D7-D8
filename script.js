@@ -141,9 +141,10 @@ const jobs = [
       result, count
     }
   }
-  myJob('dev', 'us')
+
   const titleElement = document.querySelector('#titleInput')
   function search() {
+    
     const titleInput = titleElement.value
     const locationInput = document.querySelector('#locationInput').value
 
