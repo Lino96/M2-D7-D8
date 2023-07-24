@@ -141,3 +141,20 @@ const jobs = [
       result, count
     }
   }
+
+  const titleElement = document.querySelector('#titleQuery')
+
+  function search() {
+    const titleQuery = titleElement.value
+    const locationQuery = document.querySelector('#locationQuery').value
+
+    const elements = myJob (titleQuery, locationQuery)
+    console.log(elements)
+    const results = document.querySelector('#result')
+
+    for (const elemnt of elements.result) {
+      const li = document.createElement('li')
+      li.innerHTML = '<div><p>' + elements.title + '</p> <p>' + elements.location + '</p></div>'
+      results.appendChild(li)
+    }
+  }
