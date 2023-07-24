@@ -144,7 +144,6 @@ const jobs = [
 
   const titleElement = document.querySelector('#titleInput')
   function search() {
-    
     const titleInput = titleElement.value
     const locationInput = document.querySelector('#locationInput').value
 
